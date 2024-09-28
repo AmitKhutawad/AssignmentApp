@@ -1,12 +1,9 @@
 ﻿using Moq;
 using MediatR;
-using Xunit;
 using Microsoft.AspNetCore.Mvc;
 using AssignmentApp.Controllers;
 using Application.Queries;
 using Application.Commands;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using FluentAssertions;
 using Domain.Entities;
 
@@ -141,8 +138,5 @@ public class ProductControllerTests
         // Assert
         result.Should().BeOfType<NotFoundResult>();
     }
-
-
-
 }
 

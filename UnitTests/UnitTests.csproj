@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AssignmentApp\AssignmentApp.csproj" />
+    <ProjectReference Include="..\AssignmentApp\AssignmentWebUI.csproj" />
   </ItemGroup>
 
   <ItemGroup>
