@@ -16,10 +16,4 @@
     <ProjectReference Include="..\Domain\Assignment.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="Data\users.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>

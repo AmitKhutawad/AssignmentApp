@@ -12,15 +12,13 @@ namespace Infrastructure.Repositories;
 
 public class UserRepository : IUserRepository
 {
-    private readonly string _userJsonPath = @"C:\Users\Rock\source\repos\AssignmentApp\AssignmentApp\bin\Debug\net8.0\Data\users.json";
-
     private readonly IConfiguration _configuration;
 
     public UserRepository(IConfiguration configuration)
     {
         _configuration = configuration;
     }
-
+   
     // Step 1: Get user by username and password
     public async Task<User> GetUserAsync(string username, string password)
     {
@@ -54,7 +52,8 @@ public class UserRepository : IUserRepository
     // Step 3: Load users from JSON file
     private async Task<List<User>> LoadUsersFromJsonAsync()
     {
-        var json = await File.ReadAllTextAsync(_userJsonPath);
+        var json = await File.ReadAllTextAsync(_configuration["UserJsonPath"]
+                      ?? Path.Combine(Directory.GetCurrentDirectory(), "Data", "users.json"));
         return JsonSerializer.Deserialize<List<User>>(json);
     }
 }

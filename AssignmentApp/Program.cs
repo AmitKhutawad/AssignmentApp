@@ -81,7 +81,7 @@ public class Program
 
         builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(
              Assembly.GetExecutingAssembly(),
-             Assembly.Load("Application")));
+             Assembly.Load("Assignment.Application")));
 
         builder.Services.AddScoped<IUserRepository, UserRepository>();
         //Created as Singleton to maintain product details throughout application and different Http requests
